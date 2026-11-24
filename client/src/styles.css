@@ -1,0 +1,50 @@
+.page {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.subtitle {
+  color: #555;
+}
+
+.veg-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin-bottom: 0.5rem;
+}
+
+.dish {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dish.selected {
+  font-weight: bold;
+  border-color: #2e7d32;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 220px;
+}
+
+.order-message {
+  color: #333;
+}
