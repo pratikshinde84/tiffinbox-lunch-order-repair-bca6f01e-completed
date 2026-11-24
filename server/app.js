@@ -24,7 +24,7 @@ app.post('/api/orders', (req, res) => {
   const { dishId, quantity } = req.body;
 
   const qty=Number(quantity);
-  if(!Number.isSafeInteger(qty)||qty<=0){
+  if(!Number.isSafeInteger(qty)||qty<=0||qty>=50){
     return res.status(400).json({
       error:'Invalid quantity'
     });
