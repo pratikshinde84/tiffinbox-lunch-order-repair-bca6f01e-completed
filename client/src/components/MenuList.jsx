@@ -25,7 +25,7 @@ export default function MenuList({ selectedDishId, onSelectDish }) {
       }
     }
     loadMenu();
-  }, []);
+  }, [vegOnly]);
 
   if (loading) {
     return <p>Loading menu...</p>;

@@ -11,11 +11,16 @@ export default function OrderForm({ selectedDishId }) {
       setMessage('Please pick a dish from the menu first.');
       return;
     }
+    const qty=Number(quantity);
+    if(!Number.isInteger(qty)||qty<=0){
+      setMessage("Please enter valid quantity");
+      return;
+    }
     try {
       const res = await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ dishId: selectedDishId, quantity: Number(quantity) })
+        body: JSON.stringify({ dishId: selectedDishId, quantity: qty })
       });
       const data = await res.json();
       if (res.ok) {
@@ -35,6 +40,8 @@ export default function OrderForm({ selectedDishId }) {
       <input
         id="quantity"
         type="number"
+        min="1"
+        step="1"
         value={quantity}
         onChange={(e) => setQuantity(e.target.value)}
       />
